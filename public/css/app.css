@@ -29189,6 +29189,7 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
-router-link-exact-active {
-  background-color: brown;
+.router-link-exact-active {
+  background-color: #5270d0;
+  color: #ccc !important;
 }
