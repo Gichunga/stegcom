@@ -15,28 +15,32 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                      <th>ID</th>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Type</th>
-                      <th>Modify</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Type</th>
+                        <th>Registration Date</th>
+                        <th>Modify</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>183</td>
-                      <td>John Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-success">Approved</span></td>
-                      <td>
-                          <a href="#">
-                              <i class="fas fa-edit fa-lg blue"></i>
-                          </a>
-                                <span class="mx-2">|</span>
-                          <a href="#">
-                              <i class="fas fa-user-times fa-lg red"></i>
-                          </a>
-                      </td>
+                    <tr v-for="user in users" :key="user.id">
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.type }}</td>
+                        <td>{{ user.created_at }}</td>
+
+                        <!-- <td><span class="tag tag-success">Approved</span></td> -->
+                        <td>
+                            <a href="#">
+                                <i class="fas fa-edit fa-lg blue"></i>
+                            </a>
+                                    <span class="mx-3">/</span>
+                            <a href="#">
+                                <i class="fas fa-user-times fa-lg red"></i>
+                            </a>
+                        </td>
                     </tr>
                   </tbody>
                 </table>
@@ -120,6 +124,8 @@
     export default {
         data(){
             return {
+                users : {}, 
+
                 // create a new form instance of the vform defined in app.js
                 // 2-way data binding
                 form: new Form({
@@ -132,14 +138,24 @@
                 })
             }
         },
+
         methods: {
+            loadUsers(){
+                // this function sends an http request to controller@index method
+                // uses axios to get the {data} and store in the users object
+                // {data} is a parameter in js es6
+                axios.get('api/user').then(({data}) => (this.users = data.data));
+            }, 
+
             createUser(){
                 // submit the form via a POST request
                 this.form.post('api/user');
             }
         },
-        mounted() {
-            console.log('Component mounted.')
+        // when this component is created load users
+        created() {
+            // console.log('Component mounted.')
+            this.loadUsers();
         }
     }
 </script>
