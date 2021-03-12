@@ -7,6 +7,12 @@
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+import { Form, HasError, AlertError } from 'vform'
+
+// Register the global components so that they can be accessed application wide
+window.Form = Form;
+Vue.component(HasError.name, HasError)
+Vue.component(AlertError.name, AlertError)
 
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)

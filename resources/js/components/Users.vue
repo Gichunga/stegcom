@@ -57,7 +57,50 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <!-- name -->
+                    <div class="form-group">
+                        <input v-model="form.name" type="text" name="name" placeholder="Name"
+                            class="form-control" :class="{ 'is-invalid': form.errors.has('name') }">
+                        <has-error :form="form" field="name"></has-error>
+                    </div>
+                    <!-- end name -->
+
+                    <!-- email -->
+                    <div class="form-group">
+                        <input v-model="form.email" type="text" name="email" placeholder="Email Adress"
+                            class="form-control" :class="{ 'is-invalid': form.errors.has('email') }">
+                        <has-error :form="form" field="email"></has-error>
+                    </div>
+                    <!-- end email -->
+
+                    <!-- bio -->
+                    <div class="form-group">
+                        <textarea v-model="form.bio" name="bio" id="bio" placeholder="Short bio for user (optional)"
+                            class="form-control" :class="{ 'is-invalid': form.errors.has('bio') }"></textarea>
+                        <has-error :form="form" field="bio"></has-error>
+                    </div>
+                    <!-- end bio -->
+
+                    <!-- user type -->
+                    <div class="form-group">
+                        <select name="type" id="type" class="form-control" :class="{ 'is-invalid': form.errors.has('type') }" >
+                            <option value="">Select user role</option>
+                            <option value="admin">Admin</option>
+                            <option value="user">Standard user</option>
+                            <option value="author">Author</option>
+                        </select>
+                        <has-error :form="form" field="type"></has-error>
+                    </div>
+                    <!-- end user type -->
+
+                    <!-- password -->
+                    <div class="form-group">
+                        <input v-model="form.password" type="password" name="password" id="password"
+                            class="form-control" :class="{ 'is-invalid': form.errors.has('password') }">
+                        <has-error :form="form" field="password"></has-error>
+                    </div>
+                    <!-- end password -->
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close <i class="fas fa-times"></i></button>
@@ -71,6 +114,19 @@
 
 <script>
     export default {
+        data(){
+            return {
+                // create a new form instance of the vform defined in app.js
+                form: new Form({
+                    name: '',
+                    email: '',
+                    type: '',
+                    bio: '',
+                    password: '',
+                    photo: ''
+                })
+            }
+        },
         mounted() {
             console.log('Component mounted.')
         }
