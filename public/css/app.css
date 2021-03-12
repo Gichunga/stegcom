@@ -13075,6 +13075,46 @@ a.text-muted:hover {
 
 /*# sourceMappingURL=adminlte.css.map */
 @charset "UTF-8";
+.blue {
+  color: blue;
+}
+
+.indigo {
+  color: indigo;
+}
+
+.purple {
+  color: purple;
+}
+
+.pink {
+  color: pink;
+}
+
+.red {
+  color: red;
+}
+
+.orange {
+  color: orange;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.green {
+  color: green;
+}
+
+.teal {
+  color: teal;
+}
+
+.cyan {
+  color: cyan;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -29190,6 +29230,6 @@ readers do not read off random characters that represent icons */
 }
 
 .router-link-exact-active {
-  background-color: #5270d0;
+  background-color: #55aecb;
   color: #ccc !important;
 }
