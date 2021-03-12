@@ -107,7 +107,7 @@
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close <i class="fas fa-times"></i></button>
-                            <button type="button" class="btn btn-primary">Create  <i class="fas fa-user-plus"></i></button>
+                            <button type="submit" class="btn btn-primary">Create  <i class="fas fa-user-plus"></i></button>
                         </div>
                     </form>
                 </div>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// use Illuminate\Http\Request;
 use App\Http\Controllers\API\UserController;
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('{path}', [App\Http\Controllers\HomeController::class, 'index'])->where('path','([A-z\d\-\/_.]+)');
  
-Route::apiResource('user', UserController::class);
+Route::apiResource('api/user', UserController::class);
