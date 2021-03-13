@@ -15,6 +15,7 @@ import Swal from 'sweetalert2'
 
 
 // Register the global components so that they can be accessed application wide
+window.Fire = new Vue;
 window.Form = Form;
 window.Swal = Swal;
 
