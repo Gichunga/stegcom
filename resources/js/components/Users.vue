@@ -69,7 +69,7 @@
                                 <input v-model="form.name" type="text" name="name" placeholder="Name"
                                     class="form-control" :class="{ 'is-invalid': form.errors.has('name') }">
                                 <has-error :form="form" field="name"></has-error>
-                            </div>az hhjkujkli8ki
+                            </div>
                             <!-- end name -->
 
                             <!-- email -->
@@ -148,8 +148,10 @@
             }, 
 
             createUser(){
+                this.$Progress.start();
                 // submit the form via a POST request
                 this.form.post('api/user');
+                this.$Progress.finish();
             }
         },
         // when this component is created load users

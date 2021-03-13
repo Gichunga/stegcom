@@ -9,15 +9,33 @@ require('./bootstrap');
 window.Vue = require('vue').default;
 import moment from 'moment';
 import { Form, HasError, AlertError } from 'vform'
+import VueProgressBar from 'vue-progressbar'
+import VueRouter from 'vue-router'
+
 
 // Register the global components so that they can be accessed application wide
 window.Form = Form;
 Vue.component(HasError.name, HasError)
 Vue.component(AlertError.name, AlertError)
 
-import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
+Vue.use(VueProgressBar, {
+  color: 'rgb(143, 255, 199)',
+  failedColor: 'red',
+  height: '2px'
+})
+
+// Vue filters
+Vue.filter('toUpper', function(text){
+  return text.charAt(0).toUpperCase() + text.slice(1);
+});
+
+Vue.filter('myDate', function(date){
+  return moment(date).format('MMMM Do YYYY, h:mm:ss a'); 
+});
+
+// Define Routes
 let routes = [
     { path: '/dashboard', component: require('./components/Dashboard.vue').default},
     { path: '/profile', component: require('./components/Profile.vue').default},
@@ -29,13 +47,6 @@ const router = new VueRouter({
   routes // short for `routes: routes`
 })
 
-Vue.filter('toUpper', function(text){
-  return text.charAt(0).toUpperCase() + text.slice(1);
-});
-
-Vue.filter('myDate', function(date){
-  return moment(date).format('MMMM Do YYYY, h:mm:ss a'); 
-});
   
  /**
  * The following block of code may be used to automatically register your
