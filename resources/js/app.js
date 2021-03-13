@@ -11,10 +11,13 @@ import moment from 'moment';
 import { Form, HasError, AlertError } from 'vform'
 import VueProgressBar from 'vue-progressbar'
 import VueRouter from 'vue-router'
+import Swal from 'sweetalert2'
 
 
 // Register the global components so that they can be accessed application wide
 window.Form = Form;
+window.Swal = Swal;
+
 Vue.component(HasError.name, HasError)
 Vue.component(AlertError.name, AlertError)
 
@@ -25,6 +28,15 @@ Vue.use(VueProgressBar, {
   failedColor: 'red',
   height: '2px'
 })
+
+const toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000
+});
+window.toast = toast;
+
 
 // Vue filters
 Vue.filter('toUpper', function(text){

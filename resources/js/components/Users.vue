@@ -149,8 +149,15 @@
 
             createUser(){
                 this.$Progress.start();
-                // submit the form via a POST request
-                this.form.post('api/user');
+                this.form.post('api/user'); // submit the form via a POST request
+
+                $('#userModal').modal('hide');
+
+                toast.fire({
+                    icon: 'success',
+                    title: 'User Created Successfully'
+                });
+
                 this.$Progress.finish();
             }
         },
