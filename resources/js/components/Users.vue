@@ -132,6 +132,7 @@
                 // create a new form instance of the vform defined in app.js
                 // 2-way data binding
                 form: new Form({
+                    id: '',
                     name: '',
                     email: '',
                     type: '',
@@ -144,7 +145,23 @@
 
         methods: {
             updateUser(){
-                console.log("editing data");
+                this.$Progress.start();
+                this.form.put('api/user/'+this.form.id)
+                .then(() => {
+                    //success
+                    this.form.reset();
+                    $('#userModal').modal('hide');
+                    Fire.$emit('AfterUpdate');
+                    Swal.fire(
+                        'Updated!',
+                        'User info has been updated.',
+                        'success'
+                    )
+                    this.$Progress.finish();
+                })
+                .catch(() => {
+                    this.$Progress.fail();
+                })
             },
             editModal(user){
                 this.editmode = true;
@@ -174,7 +191,7 @@
                                     'Your file has been deleted.',
                                     'success'
                                 )
-                            Fire.$emit('AfterCreate');
+                                Fire.$emit('AfterCreate');
                         }).catch(() => {
                             Swal.fire(
                                 'Failed!',
@@ -200,12 +217,12 @@
                     Fire.$emit('AfterCreate'); // after creating a user, we shout an event created
                     $('#userModal').modal('hide');
 
-                })
+                    toast.fire({
+                        icon: 'success',
+                        title: 'User Created Successfully'
+                    });
 
-                toast.fire({
-                    icon: 'success',
-                    title: 'User Created Successfully'
-                });
+                })
 
                 this.$Progress.finish();
             }
@@ -214,9 +231,12 @@
         created() {
             // console.log('Component mounted.')
             this.loadUsers();
-            Fire.$on('AfterCreate', () => {
+            Fire.$on(['AfterCreate', 'AfterUpdate'], () => {
                 this.loadUsers();
             });
+            // Fire.$on('AfterUpdate', () => {
+            //     this.loadUsers();
+            // });
             // setInterval(() => this.loadUsers(), 5000);
         }
     }
