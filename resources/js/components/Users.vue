@@ -28,8 +28,8 @@
                         <td>{{ user.id }}</td>
                         <td>{{ user.name }}</td>
                         <td>{{ user.email }}</td>
-                        <td>{{ user.type }}</td>
-                        <td>{{ user.created_at }}</td>
+                        <td>{{ user.type | toUpper }}</td>
+                        <td>{{ user.created_at | myDate}}</td>
 
                         <!-- <td><span class="tag tag-success">Approved</span></td> -->
                         <td>
@@ -69,7 +69,7 @@
                                 <input v-model="form.name" type="text" name="name" placeholder="Name"
                                     class="form-control" :class="{ 'is-invalid': form.errors.has('name') }">
                                 <has-error :form="form" field="name"></has-error>
-                            </div>
+                            </div>az hhjkujkli8ki
                             <!-- end name -->
 
                             <!-- email -->

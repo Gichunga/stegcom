@@ -7,6 +7,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+import moment from 'moment';
 import { Form, HasError, AlertError } from 'vform'
 
 // Register the global components so that they can be accessed application wide
@@ -28,6 +29,13 @@ const router = new VueRouter({
   routes // short for `routes: routes`
 })
 
+Vue.filter('toUpper', function(text){
+  return text.charAt(0).toUpperCase() + text.slice(1);
+});
+
+Vue.filter('myDate', function(date){
+  return moment(date).format('MMMM Do YYYY, h:mm:ss a'); 
+});
   
  /**
  * The following block of code may be used to automatically register your
