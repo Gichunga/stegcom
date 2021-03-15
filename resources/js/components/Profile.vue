@@ -111,7 +111,7 @@
                       </div>
                       <div class="form-group row">
                         <div class="offset-sm-12 col-sm-12">
-                          <button type="submit" class="btn btn-success">Update</button>
+                          <button @click.prevent="updateInfo" type="submit" class="btn btn-success">Update</button>
                         </div>
                       </div>
                     </form>
@@ -142,17 +142,26 @@
             }
         },
         methods: {
-            updateProfile(e){
-              // console.log("updating profile");
-              let file = e.target.files[0]; //get the uploaded file
-              let reader = new FileReader(); // create a new instance of FileReader api
-              reader.onloadend = (file) => {
-                  // console.log('RESULT', reader.result);
-                  this.form.photo = reader.result;
-              }
+          updateInfo(){ //sends a post/put request to server
+            this.form.put('api/profile') // 
+            .then(() => {
 
-              reader.readAsDataURL(file);
+            })
+            .catch(() => {
+
+            });
+          },
+          updateProfile(e){ // this function converts the image from binary to text for shiping across a network and to prevent bytes being interpreted as binary data
+            // console.log("updating profile");
+            let file = e.target.files[0]; //get the uploaded file
+            let reader = new FileReader(); // create a new instance of FileReader api
+            reader.onloadend = (file) => {
+              // console.log('RESULT', reader.result);
+              this.form.photo = reader.result;
             }
+
+            reader.readAsDataURL(file);
+          }
         },
         mounted() {
             console.log('Component mounted.')
