@@ -100,7 +100,7 @@
                       <div class="form-group row">
                         <label for="profile" class="col-sm-12 col-form-label">Profile Photo</label>
                         <div class="col-sm-12">
-                          <input type="file" id="profilePhoto">
+                          <input type="file" @change="updateProfile" id="profilePhoto">
                         </div>
                       </div>
                       <div class="form-group row">
@@ -139,6 +139,19 @@
                   password: '',
                   photo: ''
               })
+            }
+        },
+        methods: {
+            updateProfile(e){
+              // console.log("updating profile");
+              let file = e.target.files[0]; //get the uploaded file
+              let reader = new FileReader(); // create a new instance of FileReader api
+              reader.onloadend = (file) => {
+                  // console.log('RESULT', reader.result);
+                  this.form.photo = reader.result;
+              }
+
+              reader.readAsDataURL(file);
             }
         },
         mounted() {
