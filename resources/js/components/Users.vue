@@ -233,11 +233,12 @@
             this.loadUsers();
             Fire.$on(['AfterCreate', 'AfterUpdate'], () => {
                 this.loadUsers();
+                setInterval(() => this.loadUsers(), 2000);
             });
             // Fire.$on('AfterUpdate', () => {
             //     this.loadUsers();
             // });
-            // setInterval(() => this.loadUsers(), 5000);
+           
         }
     }
 </script>

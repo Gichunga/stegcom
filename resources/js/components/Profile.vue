@@ -71,19 +71,30 @@
                       <div class="form-group row">
                         <label for="inputName" class="col-sm-12 col-form-label">Name</label>
                         <div class="col-sm-12">
-                          <input type="email" class="form-control" id="inputName" placeholder="Name">
+                          <input type="email" v-model="form.name" class="form-control" id="inputName" placeholder="Name">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="inputEmail" class="col-sm-12 col-form-label">Email</label>
                         <div class="col-sm-12">
-                          <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                          <input type="email" v-model="form.email" class="form-control" id="inputEmail" placeholder="Email">
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="inputExperience" class="col-sm-12 col-form-label">Experience</label>
+                        <label for="inputBiography" class="col-sm-12 col-form-label">Biography</label>
                         <div class="col-sm-12">
-                          <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+                          <textarea class="form-control" v-model="form.bio" id="inputBiography" placeholder="Biography"></textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputType" class="col-sm-12 col-form-label">Type</label>
+                        <div class="col-sm-12">
+                          <select v-model="form.type" name="type" id="type" class="form-control" :class="{ 'is-invalid': form.errors.has('type') }" >
+                              <option value="">Select user role</option>
+                              <option value="admin">Admin</option>
+                              <option value="user">Standard user</option>
+                              <option value="author">Author</option>
+                          </select>
                         </div>
                       </div>
                       <div class="form-group row">
@@ -117,8 +128,24 @@
 
 <script>
     export default {
+        data(){
+            return {
+              form: new Form({
+                  id: '',
+                  name: '',
+                  email: '',
+                  type: '',
+                  bio: '',
+                  password: '',
+                  photo: ''
+              })
+            }
+        },
         mounted() {
             console.log('Component mounted.')
+        },
+         created() {
+            axios.get('api/profile').then(({data}) => (this.form.fill(data)));
         }
     }
 </script>
