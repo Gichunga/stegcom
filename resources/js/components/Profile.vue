@@ -106,7 +106,7 @@
                       <div class="form-group row">
                         <label for="inputExperience" class="col-sm-12 col-form-label">Password (leave empty if not changing)</label>
                         <div class="col-sm-12">
-                          <input type="password" class="form-control" id="password" placeholder="Password">
+                          <input type="password" v-model="form.password" class="form-control" id="password" placeholder="Password">
                         </div>
                       </div>
                       <div class="form-group row">
@@ -181,11 +181,8 @@
             
           }
         },
-        mounted() {
-            console.log('Component mounted.')
-        },
-         created() {
-            axios.get('api/profile').then(({data}) => (this.form.fill(data)));
+        created() {
+          axios.get('api/profile').then(({data}) => this.form.fill(data));
         }
     }
 </script>
