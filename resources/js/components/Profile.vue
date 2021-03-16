@@ -143,28 +143,42 @@
         },
         methods: {
           updateInfo(){ //sends a post/put request to server
+            this.$Progress.start();
             this.form.put('api/profile') // 
             .then(() => {
-               Swal.fire(
+              this.$Progress.finish();
+               toast.fire(
                   'Updated!',
                   'User info has been updated.',
                   'success'
               )
             })
             .catch(() => {
-
+              $this.$Progress.fail();
             });
           },
           updateProfile(element){ // this function converts the image from binary to text for shiping across a network and to prevent bytes being interpreted as binary data
             // console.log("updating profile");
             let file = element.target.files[0]; //get the uploaded file
+            console.log(file);
             let reader = new FileReader(); // create a new instance of FileReader api
-            reader.onloadend = (file) => {
-              // console.log('RESULT', reader.result);
-              this.form.photo = reader.result;
-            }
 
-            reader.readAsDataURL(file);
+            //check for file size
+            if(file['size'] < 2097152){
+              reader.onloadend = (file) => {
+              // console.log('RESULT', reader.result);
+                this.form.photo = reader.result;
+              } 
+
+              reader.readAsDataURL(file);
+            }else{
+              Swal.fire(
+                  'Failed!',
+                  'The file is too large',
+                  'warning'
+              )
+            }
+            
           }
         },
         mounted() {
