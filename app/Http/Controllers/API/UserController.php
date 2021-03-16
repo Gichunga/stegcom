@@ -91,6 +91,11 @@ class UserController extends Controller
             $request->merge(['photo' => $name]);
         }
 
+        // Hash the password using bcrypt if it has been changed
+        if(!empty($request->password)){
+            $request->merge(['password' => Hash::make($request['password'])]);
+        }
+
         $user->update($request->all());
         return ['message' => "success"];
     }
