@@ -151,9 +151,9 @@
 
             });
           },
-          updateProfile(e){ // this function converts the image from binary to text for shiping across a network and to prevent bytes being interpreted as binary data
+          updateProfile(element){ // this function converts the image from binary to text for shiping across a network and to prevent bytes being interpreted as binary data
             // console.log("updating profile");
-            let file = e.target.files[0]; //get the uploaded file
+            let file = element.target.files[0]; //get the uploaded file
             let reader = new FileReader(); // create a new instance of FileReader api
             reader.onloadend = (file) => {
               // console.log('RESULT', reader.result);
