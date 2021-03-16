@@ -74,7 +74,7 @@ class UserController extends Controller
 
     public function updateProfile(Request $request) // takes the request data but no id 
     {
-        $user = auth('api')->user();
+        // $user = auth('api')->user();
 
         if($request->photo){
             $name = time().'.' . explode('/', explode(':', substr($request->photo, 0, strpos($request->photo, ';')))[1])[1];
