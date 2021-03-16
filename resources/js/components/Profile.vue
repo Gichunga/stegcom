@@ -145,7 +145,11 @@
           updateInfo(){ //sends a post/put request to server
             this.form.put('api/profile') // 
             .then(() => {
-
+               Swal.fire(
+                  'Updated!',
+                  'User info has been updated.',
+                  'success'
+              )
             })
             .catch(() => {
 
