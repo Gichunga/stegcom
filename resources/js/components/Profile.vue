@@ -149,15 +149,18 @@
         },
         methods: {
           getProfilePhoto(){
-            let image = new Image();
-            return image.src = "img/profile/"+this.form.photo;
+            // let image = new Image();
+            // return image.src = "img/profile/"+this.form.photo;
+            let photo = (this.form.photo.length > 200) ? this.form.photo : "img/profile/"+this.form.photo;
+            return photo;
           },
           updateInfo(){ //sends a post/put request to server
             this.$Progress.start();
             this.form.put('api/profile') // insert the updated information
             .then(() => {
               this.$Progress.finish();
-               toast.fire(
+                Fire.$emit('AfterUpdate'); // after updating a user, we shout an event created
+                toast.fire(
                   'Updated!',
                   'User info has been updated.',
                   'success'
@@ -192,7 +195,9 @@
           }
         },
         created() {
-          axios.get('api/profile').then(({data}) => this.form.fill(data));
+          Fire.$on(['AfterUpdate'], () => {
+            axios.get('api/profile').then(({data}) => this.form.fill(data));
+          });          
         }
     }
 </script>
