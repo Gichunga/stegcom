@@ -1,9 +1,9 @@
 # stegcom
 
  # Here are some awesome things the repo include out of the box:
-  ```. Using Vue Router with Laravel
-    AdminLTE 3 for admin dashboard
-    Font Awesome 5 for Laravel 8
+  * Using Vue Router with Laravel
+  * AdminLTE 3 for admin dashboard
+  * Font Awesome 5 for Laravel 8
     How integrate mailchimp with laravel
     How to use Laravel Socialite
     How to Login Using Social Media
