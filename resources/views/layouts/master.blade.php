@@ -193,6 +193,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </router-link>
           </li>
 
+          @can('isAdmin')
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-cogs green"></i>
@@ -213,7 +214,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
 
-          @can('isAdmin')
           <li class="nav-item">
             <router-link to="/developer" class="nav-link">
               <i class="nav-icon fas fa-code"></i>
@@ -305,9 +305,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </div>
 <!-- ./wrapper -->
 
+@auth
+  <script>
+    window.user = @json(auth()->user())
+  </script>
+@endauth
 <!-- REQUIRED SCRIPTS -->
-
 <script src="js/app.js"></script>
-<script src="{{ mix('js/all.min.js') }}"></script>
+<script src="{{ mix('js/all.min.js') }}"></script> // to be able to use admin-lte javascript file
 </body>
 </html>

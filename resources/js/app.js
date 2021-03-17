@@ -8,11 +8,13 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 import moment from 'moment';
-import { Form, HasError, AlertError } from 'vform'
-import VueProgressBar from 'vue-progressbar'
-import VueRouter from 'vue-router'
-import Swal from 'sweetalert2'
+import { Form, HasError, AlertError } from 'vform';
+import VueProgressBar from 'vue-progressbar';
+import VueRouter from 'vue-router';
+import Swal from 'sweetalert2';
 
+import Gate from './Gate';
+Vue.prototype.$gate = new Gate(window.user); // so that we can use $gate anywhere in our application. window.user is the authenticated user passed from @json in master
 
 // Register the global components so that they can be accessed application wide
 window.Fire = new Vue;
