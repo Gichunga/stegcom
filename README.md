@@ -4,7 +4,7 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 
-This is a general purpose aapplication built using `laravel 8` and `Vue js`. You can use this app as a starter template for building your applications by followiing the installation procedures outlined below.
+This is a general purpose application built using `laravel 8` and `Vue js`. You can use this app as a starter template for building your applications by followiing the installation procedures outlined below.
 We have integrated some of the most useful packages to ease you with the struggle of configurations
 
  ## Here are some awesome things the repo include out of the box:
