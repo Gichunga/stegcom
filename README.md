@@ -31,9 +31,10 @@ It's just like any other Laravel project. Basically here is how you use it for y
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
     DB_PORT=3306
-    DB_DATABASE=db name
-    DB_USERNAME=~your db username~
-    DB_PASSWORD= ~password if any~```
+    DB_DATABASE= db name
+    DB_USERNAME= your db username
+    DB_PASSWORD= password if any
+ ```
 * run `php artisan key:generate` to migrate your database
 * register as a normal user then in your localhost dashboard change the user type to admin
 * run `php artisan passport:install` to install the necessary confiigurations you need for your laravel passport.
