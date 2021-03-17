@@ -1,7 +1,7 @@
 # stegcom
 
  # Here are some awesome things the repo include out of the box:
-  . Using Vue Router with Laravel
+  ```. Using Vue Router with Laravel
     AdminLTE 3 for admin dashboard
     Font Awesome 5 for Laravel 8
     How integrate mailchimp with laravel
@@ -16,11 +16,10 @@
     Axios and Ajax Request
     ACL in Laravel
     Online Users list
-    And much more...
+    And much more...```
 ```
 ## Installation.
-function(){
-}
+
 It's just like any other Laravel project. Basically here is how you use it for yourself.
 . Clone the repo git clone https://github.com/Gichunga/stegcom.git
 . cd into the project folder
