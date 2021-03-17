@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="row justify-content-center mt-5" v-if="$gate.isAdmin()">
+        <div class="row justify-content-center mt-5" v-if="$gate.isAdminOrAuthor()">
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
@@ -51,7 +51,7 @@
           </div>
         </div>
 
-        <div v-if="!$gate.isAdmin()">
+        <div v-if="!$gate.isAdminOrAuthor()">
             <not-found></not-found>
         </div>
 
@@ -213,7 +213,7 @@ import NotFound from './NotFound.vue';
                 // this function sends an http request to controller@index method
                 // uses axios to get the {data} and store in the users object
                 // {data} is a parameter in js es6
-                if(this.$gate.isAdmin()){
+                if(this.$gate.isAdminOrAuthor()){
                     axios.get('api/user').then(({data}) => (this.users = data.data));
                 }
             }, 
