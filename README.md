@@ -17,7 +17,7 @@
     ACL in Laravel
     Online Users list
     And much more...
-
+```
 ## Installation.
 It's just like any other Laravel project. Basically here is how you use it for yourself.
 . Clone the repo git clone https://github.com/Gichunga/stegcom.git
@@ -30,3 +30,4 @@ It's just like any other Laravel project. Basically here is how you use it for y
 . register as a normal user then in your localhost dashboard change the user type to admin
 . run php artisan passport:install to install the necessary confiigurations you need for your laravel passport.
 . Done!!! Enjoy customizing the application to your needs.
+```
