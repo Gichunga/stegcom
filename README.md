@@ -4,20 +4,20 @@
   * Using Vue Router with Laravel
   * AdminLTE 3 for admin dashboard
   * Font Awesome 5 for Laravel 8
-    How integrate mailchimp with laravel
-    How to use Laravel Socialite
-    How to Login Using Social Media
-    How to Use API in Laravel
-    Api Auth with Laravel Passport
-    JWT with Laravel Passport and JavaScript Request
-    Vue Custom Events
-    Vue form with Laravel
-    Relational Database with Laravel
-    Axios and Ajax Request
-    ACL in Laravel
-    Online Users list
-    And much more...```
-```
+  * How integrate mailchimp with laravel
+  * How to use Laravel Socialite
+  * How to Login Using Social Media
+  * How to Use API in Laravel
+  * Api Auth with Laravel Passport
+  * JWT with Laravel Passport and JavaScript Request
+  * Vue Custom Events
+  * Vue form with Laravel
+  * Relational Database with Laravel
+  * Axios and Ajax Request
+  * ACL in Laravel
+  * Online Users list
+  * And much more...```
+
 ## Installation.
 
 It's just like any other Laravel project. Basically here is how you use it for yourself.
