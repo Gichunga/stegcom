@@ -25,6 +25,7 @@ window.Swal = Swal;
 
 Vue.component(HasError.name, HasError)
 Vue.component(AlertError.name, AlertError)
+Vue.component('pagination', require('laravel-vue-pagination'));
 
 Vue.use(VueRouter)
 
@@ -57,6 +58,7 @@ let routes = [
     { path: '/dashboard', component: require('./components/Dashboard.vue').default},
     { path: '/profile', component: require('./components/Profile.vue').default},
     { path: '/users', component: require('./components/Users.vue').default},
+    { path: '*', component: require('./components/NotFound.vue').default},
   ]
 
 const router = new VueRouter({

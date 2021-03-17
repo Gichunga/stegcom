@@ -24,7 +24,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="user in users" :key="user.id">
+                    <tr v-for="user in users.data" :key="user.id">
                         <td>{{ user.id }}</td>
                         <td>{{ user.name }}</td>
                         <td>{{ user.email }}</td>
@@ -46,6 +46,9 @@
                 </table>
               </div>
               <!-- /.card-body -->
+              <div class="card-footer">
+                  <pagination :data="users" @pagination-change-page="getResults"></pagination>
+              </div>
             </div>
             <!-- /.card -->
           </div>
@@ -150,6 +153,10 @@ import NotFound from './NotFound.vue';
         },
 
         methods: {
+            getResults(page = 1){
+                axios.get('api/user?page='+page)
+                .then(response => {this.users = response.data;}) // store all the response data in the users variable which will then update our table
+            },
             updateUser(){
                 this.$Progress.start();
                 this.form.put('api/user/'+this.form.id)
@@ -214,7 +221,7 @@ import NotFound from './NotFound.vue';
                 // uses axios to get the {data} and store in the users object
                 // {data} is a parameter in js es6
                 if(this.$gate.isAdminOrAuthor()){
-                    axios.get('api/user').then(({data}) => (this.users = data.data));
+                    axios.get('api/user').then(({data}) => (this.users = data)); //removed the data.data so as to pass an object to users and not array. Also remember to update the template...!!!
                 }
             }, 
 

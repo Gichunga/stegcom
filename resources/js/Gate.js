@@ -17,7 +17,4 @@ export default class Gate{
             return true;
         }
     }
-    isUser(){
-        return this.user.type === 'user';
-    }
 }
