@@ -1,4 +1,6 @@
 # stegcom
+This is a general purpose aapplication built using `laravel 8` and `Vue js`. You can use this app as a starter template for building your applications by followiing the installation procedures outlined below.
+We have integrated some of the most useful packages to ease you with the struggle of configurations
 
  ## Here are some awesome things the repo include out of the box:
   * Using Vue Router with Laravel
