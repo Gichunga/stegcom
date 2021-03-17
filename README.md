@@ -28,7 +28,6 @@ It's just like any other Laravel project. Basically here is how you use it for y
 * create a database for your application
 * `ctr+shift+s` on the env.example and rename to .env then set your database information eg,
 
-file-> `.env`
     ```php
         DB_CONNECTION=mysql
         DB_HOST=127.0.0.1
