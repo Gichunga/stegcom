@@ -245,6 +245,16 @@ import NotFound from './NotFound.vue';
         // when this component is created load users
         created() {
             // console.log('Component mounted.')
+            Fire.$on('searching', () => {
+                let query = this.$parent.search; //this takes data from the root application(app.js) and assigns it to query
+                axios.get('api/findUser?q=' + query)
+                .then((data) => {
+                    this.users = data.data;
+                })
+                .catch(() => {
+
+                });
+            });
             this.loadUsers();
             Fire.$on(['AfterCreate', 'AfterUpdate'], () => {
                 this.loadUsers();
