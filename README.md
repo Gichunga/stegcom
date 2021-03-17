@@ -19,6 +19,8 @@
     And much more...
 ```
 ## Installation.
+function(){
+}
 It's just like any other Laravel project. Basically here is how you use it for yourself.
 . Clone the repo git clone https://github.com/Gichunga/stegcom.git
 . cd into the project folder
