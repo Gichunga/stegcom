@@ -13,6 +13,8 @@ import VueProgressBar from 'vue-progressbar';
 import VueRouter from 'vue-router';
 import Swal from 'sweetalert2';
 
+
+
 import Gate from './Gate';
 Vue.prototype.$gate = new Gate(window.user); // so that we can use $gate anywhere in our application. window.user is the authenticated user passed from @json in master
 
@@ -62,7 +64,9 @@ const router = new VueRouter({
   routes // short for `routes: routes`
 })
 
-  
+Vue.component('not-found', require('./components/NotFound.vue').default);
+
+
  /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

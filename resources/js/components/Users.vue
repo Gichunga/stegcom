@@ -51,6 +51,10 @@
           </div>
         </div>
 
+        <div v-if="!$gate.isAdmin()">
+            <not-found></not-found>
+        </div>
+
         <!-- Modal -->
         <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -123,7 +127,9 @@
 </template>
 
 <script>
+import NotFound from './NotFound.vue';
     export default {
+  components: { NotFound },
         data(){
             return {
                 editmode: false,
