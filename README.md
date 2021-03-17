@@ -21,7 +21,7 @@ We have integrated some of the most useful packages to ease you with the struggl
   * Vue form with Laravel
   * Relational Database with Laravel
   * Axios and Ajax Request
-  * ACL in Laravel
+  * ACL using Vue
   * Online Users list
   * And much more...
 
