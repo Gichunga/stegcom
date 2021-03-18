@@ -8,13 +8,13 @@ This is a general purpose application built using `laravel 8` and `Vue js`. You 
 We have integrated some of the most useful packages to ease you with the struggle of configurations
 
  ## Here are some awesome things the repo include out of the box:
-  * Using Vue Router with Laravel
+  * Vue Router with Laravel
   * AdminLTE 3 for admin dashboard
   * Font Awesome 5 for Laravel 8
   * mailchimp integration
   * Laravel Socialite
   * Login Using Social Media
-  * How to Use API in Laravel
+  * Laravel Api
   * Api Auth with Laravel Passport
   * JWT with Laravel Passport and JavaScript Request
   * Vue Custom Events
