@@ -36,9 +36,9 @@ It's just like any other Laravel project. Basically here is how you use it for y
 * `ctr+shift+s` on the env.example and rename to .env then set your database information eg,
 
     ```php
-        DB_CONNECTION=mysql
-        DB_HOST=127.0.0.1
-        DB_PORT=3306
+        DB_CONNECTION= mysql
+        DB_HOST= 127.0.0.1
+        DB_PORT= 3306
         DB_DATABASE= <db name>
         DB_USERNAME= <your db username>
         DB_PASSWORD= <password if any>
