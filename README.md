@@ -11,9 +11,9 @@ We have integrated some of the most useful packages to ease you with the struggl
   * Vue Router with Laravel
   * AdminLTE 3 for admin dashboard
   * Font Awesome 5 for Laravel 8
-  * mailchimp integration
+  * Mailchimp integration
   * Laravel Socialite
-  * Login Using Social Media
+  * Login Using Social Media Account
   * Laravel Api
   * Api Auth with Laravel Passport
   * JWT with Laravel Passport and JavaScript Request
