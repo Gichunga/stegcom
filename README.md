@@ -23,7 +23,7 @@ We have integrated some of the most useful packages to ease you with the struggl
   * Axios and Ajax Request
   * ACL using Vue
   * Online Users list
-  * More features coming soon
+  * More features coming soon ...
 
 ## Installation.
 
