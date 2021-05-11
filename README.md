@@ -7,7 +7,7 @@
 This is a general purpose application built using `laravel 8` and `Vue js`. You can use this app as a starter template for building your applications by followiing the installation procedures outlined below.
 We have integrated some of the most useful packages to ease you with the struggle of configurations
 
- ## Here are some awesome things the repo include out of the box:
+ ## Here are some awesome things the repo include out of the box:...
   * Vue Router with Laravel
   * AdminLTE 3 for admin dashboard
   * Font Awesome 5 for Laravel 8
@@ -25,7 +25,7 @@ We have integrated some of the most useful packages to ease you with the struggl
   * Online Users list
   * More features coming soon ...
 
-## Installation.
+## Installation...
 
 It's just like any other Laravel project. Basically here is how you use it for yourself.
 * Clone the repo `git clone https://github.com/Gichunga/stegcom.git`
